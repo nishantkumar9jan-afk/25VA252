@@ -1,0 +1,83 @@
+body  { 
+margin :  0 ; 
+padding :  0 ; 
+font-family :  Arial ,  sans-serif ; 
+background :  #f2f2f2 ; 
+} 
+.main-container  { 
+display :  flex ; 
+justify-content :  center ; 
+align-items :  center ; 
+height :  100vh ; 
+} 
+.counter-card  { 
+background-color :  white ; 
+width :  420px ; 
+padding :  40px ; 
+border-radius :  15px ; 
+text-align :  center ; 
+box-shadow :  0  4px  12px  rgba ( 0 ,  0 ,  0 ,  0.2 ); 
+} 
+.counter-card  h1  { 
+font-size :  42px ; 
+margin-bottom :  30px ; 
+line-height :  1.2 ; 
+} 
+.counter-card  h2  { 
+font-size :  60px ; 
+margin-bottom :  35px ; 
+} 
+.button-group  { 
+display :  flex ; 
+justify-content :  center ; 
+gap :  20px ; 
+margin-bottom :  20px ; 
+} 
+button  { 
+background-color :  #1e88ff ; 
+color :  white ; 
+border :  none ; 
+padding :  12px  22px ; 
+font-size :  18px ; 
+border-radius :  6px ; 
+cursor :  pointer ; 
+} 
+button :hover  { 
+background-color :  #006be6 ; 
+} 
+.reset-btn  { 
+margin-top :  10px ; 
+} 
+import  { useState }  from  "react" ; 
+import  "./App.css" ; 
+function  App ()  { 
+const  [ count ,  setCount ]  =  useState ( 0 ); 
+const  increase  =  ()  =>  { 
+setCount ( count  +  1 ); 
+}; 
+const  decrease  =  ()  =>  { 
+setCount ( count  -  1 ); 
+}; 
+const  resetValue  =  ()  =>  { 
+setCount ( 0 ); 
+}; 
+return  ( 
+< div  className = "main-container" > 
+< div  className = "counter-card" > 
+< h1 > React Counter Application </ h1 > 
+< h2 > { count } </ h2 > 
+< div  className = "button-group" > 
+< button  onClick = { increase } > 
+Increment (+) 
+</ button > 
+< button  onClick = { decrease } > 
+Decrement (-) 
+</ button >  </ div > 
+< button  className = "reset-btn"  onClick = { resetValue } > 
+Reset 
+</ button > 
+</ div > 
+</ div > 
+); 
+} 
+export  default  App ;
